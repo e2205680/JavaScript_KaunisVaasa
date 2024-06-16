@@ -1,4 +1,4 @@
-console.log("Kaunis Vaasa");
+console.log("Kaunis Vaasa - Finland");
 
 let katsoKuva = "1Kuva";
 
