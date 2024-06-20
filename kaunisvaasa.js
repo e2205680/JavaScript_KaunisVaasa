@@ -1,11 +1,16 @@
 console.log("Kaunis Vaasa - Finland");
 
-let katsoKuva = "1Kuva";
+let katsoKuva = "0Kuva";
 
 function omaFunktio()
 {
-    let pic = document.getElementById("kuva1");
-    if(katsoKuva == "1Kuva"){
+    let pic = document.getElementById("kuva0");
+
+    if(katsoKuva == "0Kuva"){
+        pic.src = "img_1.jpg"; 
+        katsoKuva = "1Kuva";
+    }
+    else if(katsoKuva == "1Kuva"){
         pic.src = "img_2.jpg"; 
         katsoKuva = "2Kuva";
     }
@@ -83,8 +88,8 @@ function omaFunktio()
     }
 
     else{
-        pic.src = "img_1.jpg"; 
-        katsoKuva = "1Kuva";
+        pic.src = "img_0.jpg"; 
+        katsoKuva = "0Kuva";
     }
     
 } 
