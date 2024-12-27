@@ -12,3 +12,15 @@ for (let index = 0; index <21; index++) {
 }
 
 console.log(kuvat);
+
+let kuvatLength = kuvat.length;
+let numero=0;
+
+function omaFunktio() {
+    pic.src = kuvat[numero]+".jpg";
+    numero=numero+1;
+    if(numero==kuvatLength) {
+        numero=0;  
+    }  
+}
+
