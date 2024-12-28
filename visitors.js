@@ -14,4 +14,6 @@ const incrementedCount = visits + 1;
 localStorage.setItem("visits", incrementedCount);
 
 count.innerText = localStorage.getItem("visits");
+
+console.log("Tämä on vierailusi numero: " + incrementedCount);
 }
