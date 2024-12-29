@@ -14,13 +14,14 @@ let kuvatLength = kuvat.length;
 let numero=1;
  
 function omaFunktio() {
-    pic.src = kuvat[numero]+".jpg";
+
     console.log(kuvat[numero]); 
+    pic.src = kuvat[numero]+".jpg";
+    
     numero=numero+1;
     if(numero==kuvatLength) {
         numero=0;  
-    }
-    //console.log(kuvat[numero]);  
+    }   
 }
 
 
