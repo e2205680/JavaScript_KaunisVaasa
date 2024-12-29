@@ -18,7 +18,10 @@ async function apiTemperature() {
         temperature.innerText = "Lämpötila: " + data.temp_c + "°C";
         temperatureFeelsLike.innerText = "Lämpötilan tunne: " + data.feelslike_c + "°C";
         windSpeed.innerText = "Tuulen nopeus: " + data.windspd_ms + " m/s"
-
+        
+        console.log("Data from API:");
+        console.log(data);
+        console.log("Data taken to be shown in the webpage");
         console.log("Temperature: " + data.temp_c + "°C");
         console.log("Temperature feels like: " + data.feelslike_c + "°C");
         console.log("Wind speed: " + data.windspd_ms + " m/s");
