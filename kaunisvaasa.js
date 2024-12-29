@@ -7,16 +7,20 @@ for (let index = 0; index <21; index++) {
     kuvat[index] = "img_"+index;
 }
 
+console.log("Array of kuvat names:");
 console.log(kuvat);
 
 let kuvatLength = kuvat.length;
-let numero=0;
-
+let numero=1;
+ 
 function omaFunktio() {
     pic.src = kuvat[numero]+".jpg";
+    console.log(kuvat[numero]); 
     numero=numero+1;
     if(numero==kuvatLength) {
         numero=0;  
-    }  
+    }
+    //console.log(kuvat[numero]);  
 }
+
 
