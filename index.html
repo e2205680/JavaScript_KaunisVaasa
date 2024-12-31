@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 <head>
   <title>KAUNIS VAASA</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> 
@@ -28,7 +28,7 @@
   <div class="col-6 col-s-9">
 
     <h1><span class="bit"><b>Valokuva-albumi</b></span></h1>
-
+	  
     <!-- Adding a border to the Album picture -->
     
     <div class="borde">
@@ -36,12 +36,17 @@
     </div>
 
     <!-- END of Adding a border to the Album picture -->
-	 
+
     <br>
-    <button class="button animation" onclick = "omaFunktio();">Seuraava kuva</button>
+    
+    <button class="button button2 animation" id="buttonEdellinen">Edellinen Kuva</button>   <!-- Adding second button -->
+    <button class="button button1 animation" id="buttonSeurava">Seuraava Kuva</button>    <!-- Adding class: button1 -->
+
+    <br>
+    
     <script src="kaunisvaasa.js" defer></script>
 
-        <!-- New Addition for slotmachine -->
+    <!-- New Addition for slotmachine -->
 
     <h1><span class="bit"><b>Pelikone</b></span></h1>
     <div id="tirar">Tirar</div>
@@ -69,13 +74,12 @@
     </section>
 
     <div id="cuadro_mensaje">
-      <div id="mensaje">Espero que ganes</div>
+      <div id="mensaje">Presiona el boton, si coinciden las fotos, recibirás un mensaje</div>
     </div>
 
     <script src="pelikone.js" defer></script>
 
     <!-- END of New Addition for slotmachine -->
-
   </div>
 
   <div class="col-3 col-s-12">
@@ -96,10 +100,9 @@
 </div>
 
 <div class="footer">
-  <p><small>JavaScript Loppuprojekti by Ivonne Cuadros Evangelista</small></p>
+  <p><small>JavaScript Loppuprojekti by Ivonne Cuadros Evangelista 2024</small></p>
 </div>
 
 </body>
 </html>
-
 
