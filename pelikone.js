@@ -49,6 +49,24 @@ function lanzar_inicio(){
     comparar();
 }
 
+// Adding code for the 3 buttons of gameLevel
+let multiplier;
+
+    document.getElementById("easy").addEventListener("click", () => {
+        multiplier = 3; 
+        console.log("multiplier: "+multiplier);
+    }); 
+    document.getElementById("medium").addEventListener("click", () => {
+        multiplier = 10; 
+        console.log("multiplier: "+multiplier);
+    });
+    document.getElementById("hard").addEventListener("click", () => {
+        multiplier = kuvat.length; 
+        console.log("multiplier: "+multiplier);
+    }); 
+
+// END of Adding code for the 3 buttons of gameLevel
+
 function escoger_numero(){
     let azar=Math.floor(Math.random() * 1);  //kuvat.lenght=3
     return azar;
