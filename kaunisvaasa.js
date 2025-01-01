@@ -7,43 +7,52 @@ let pic = document.getElementById("kuva0");
 
 let kuvat = [];
 for (let index = 0; index <21; index++) {
-    kuvat[index] = "img_"+index+".jpg";
+    
+    kuvat.push("img_"+index+".jpg");
 }
 
 console.log("Array of kuvat names:");
 console.log(kuvat);
 
 let kuvatLength = kuvat.length;
-let numero=1;
+let numero = 0; 
 
 buttonEdellinen.addEventListener("click", nappiEdellinenKuva);
 buttonSeurava.addEventListener("click", nappiSeuravaaKuva);
 
-function nappiSeuravaaKuva() {
+// Adding katsoKuva function
 
+function katsoKuva(){
     
     console.log(kuvat[numero]);
+
     pic.src = kuvat[numero];
-    numero=numero+1;
-    if(numero==kuvatLength) {
-        numero=0;  
+}
+// END of Adding KatsoKuva function
+
+function nappiSeuravaaKuva() {
+
+    numero = numero +  1;
+  
+    if(numero >= kuvatLength) {
+        numero = 0;  
     }
+
+    katsoKuva();
 }
 
-// Adding second button
+// Adding second button Edellinen function
 
 function nappiEdellinenKuva() {
+    
+    numero = numero - 1;
 
-    let toinennum = numero-2;
-    console.log(kuvat[toinennum]);
-    pic.src = kuvat[toinennum];
-
-    toinennum=toinennum-1;
-    if(toinennum<1) {
-        toinennum=0;  
+    if(numero < 0) {
+        numero = kuvatLength - 1;  
     }
     
-// END of Adding second button
+    katsoKuva();
+    
+// END of Adding second button Edellinen function
 
 }
-
