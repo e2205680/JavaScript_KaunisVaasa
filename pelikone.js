@@ -1,9 +1,9 @@
-window.onload=inicio;
+window.onload = aloittaa;
 
-// Se usa el array kuvat creado en kaunisvaasa.js para las imagenes
+// Käyttämällä kuvat array - from kaunisvaasa.js tiedosto
 
-// 21 Mensajes de premio
-let premios =[
+// viesti jokaiselle kuvalle - yhteensä 21 viestiä
+let palkinnot =[
     "Unelmat eivät ole liian suuria, ne vain odottavat, että rohkeutesi kasvaa tarpeeksi tavoittaaksesi ne",
     "Jokainen päivä on uusi mahdollisuus aloittaa alusta ja kirjoittaa oma tarinasi.",
     "Pienet askeleet vievät pidemmälle kuin suuri liikkumattomuus.",
@@ -27,26 +27,30 @@ let premios =[
     "Kaikki mitä tarvitset, on jo sisälläsi – odottamassa, että vapautat sen."
 ]; 
 
-let numeros_actuales=[];
+let paikka=[];
 
 
-function inicio(){
-    document.getElementById("tirar").onclick=lanzar_inicio;
+function aloittaa(){
+
+    document.getElementById("easy").addEventListener("click", painaNappi); 
+    document.getElementById("medium").addEventListener("click", painaNappi);
+    document.getElementById("hard").addEventListener("click", painaNappi);    
 }
 
-function lanzar_inicio(){
+function painaNappi(){
 
-    numeros_actuales=[];
+    paikka=[];
 
-    let maximo = document.getElementsByClassName("ventana").length;
+    let maximo = document.getElementsByClassName("ikkuna").length;
 
     for (let k=0;k<maximo;k++){
-        numeros_actuales.push(escoger_numero());
-        mostrar_imagen(k,numeros_actuales[k]);
-    }
-    console.log(numeros_actuales);
 
-    comparar();
+        paikka.push(valitseKuva());
+        näytäKuva(k,paikka[k]);
+    }
+    console.log(paikka);
+
+    vertailla();
 }
 
 // Adding code for the 3 buttons of gameLevel
@@ -67,29 +71,29 @@ let multiplier;
 
 // END of Adding code for the 3 buttons of gameLevel
 
-function escoger_numero(){
-    let azar=Math.floor(Math.random() * 1);  //kuvat.lenght=3
-    return azar;
+function valitseKuva(){
+
+    let kuvaIndex=Math.floor(Math.random() * multiplier);  
+    return kuvaIndex;
 }
 
-function mostrar_imagen(num,im){
+function näytäKuva(num,im){
 
     document.getElementsByClassName("imagen")[num].getElementsByTagName("img")[0].src=kuvat[im]; 
 }
 
-function comparar(){
+function vertailla(){
 
    const mensaje = document.getElementById("mensaje");
 
-   if(numeros_actuales[0]==numeros_actuales[1] && numeros_actuales[1]==numeros_actuales[2]){
+   if(paikka[0]==paikka[1] && paikka[1]==paikka[2]){
                 
-        mensaje.innerText = premios[numeros_actuales[0]];
-        console.log("Mensaje ganador: "+numeros_actuales[0]);
+        mensaje.innerText = palkinnot[paikka[0]];
+        console.log("Voittoviesti: "+paikka[0]);
 
-        play();  // activa el audio
+        play();  // Aktivoi voittava ääni
    }
 }
-
 
 function play(){
 
