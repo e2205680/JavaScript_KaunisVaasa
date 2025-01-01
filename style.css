@@ -10,6 +10,24 @@
 }
 
 /* END of Adding a border to the Album picture */
+
+/* Adding 3 gameLevel buttons slotmachine */
+.gameLevel {
+  display: inline-block ;
+  width:50px;
+  height:50px;
+  background-color:rgb(108, 236, 211);
+  border-radius:50%;
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+  font-size: 12px;
+  cursor:pointer; 
+}
+
+.gameLevel:hover {
+  background-color: rgb(90, 67, 239);
+}
  
  /* New Addition for slotmachine */
  
